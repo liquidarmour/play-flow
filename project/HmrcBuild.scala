@@ -78,7 +78,7 @@ object SonatypeBuild {
           </license>
         </licenses>
         <scm>
-          <connection>scm:git@github.com:hmrc/simple-reactivemongo.git</connection>
+          <connection>scm:git@github.com:hmrc/play-flow.git</connection>
           <developerConnection>scm:git@github.com:hmrc/simple-reactivemongo.git</developerConnection>
           <url>git@github.com:hmrc/simple-reactivemongo.git</url>
         </scm>
