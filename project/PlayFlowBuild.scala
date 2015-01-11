@@ -1,11 +1,10 @@
 import sbt._
 import Keys._
 
-object HmrcBuild extends Build {
+object PlayFlowBuild extends Build {
 
   import uk.gov.hmrc.DefaultBuildSettings
   import DefaultBuildSettings._
-  import BuildDependencies._
   import uk.gov.hmrc.{SbtBuildInfo, ShellPrompt}
 
   val nameApp = "play-flow"
@@ -21,7 +20,7 @@ object HmrcBuild extends Build {
     )
   }
 
-  lazy val simpleReactiveMongo = Project(nameApp, file("."))
+  lazy val playFlow = Project(nameApp, file("."))
     .settings(version := versionApp)
     .settings(scalaSettings : _*)
     .settings(defaultSettings() : _*)
@@ -35,7 +34,7 @@ object HmrcBuild extends Build {
         "typesafe-releases" at "http://repo.typesafe.com/typesafe/releases/",
         "typesafe-snapshots" at "http://repo.typesafe.com/typesafe/snapshots/"
       ),
-      crossScalaVersions := Seq("2.11.2", "2.10.4"),
+      crossScalaVersions := Seq("2.11.4", "2.10.4"),
       publishArtifact := true,
       publishArtifact in Test := true
     )
@@ -70,7 +69,7 @@ object SonatypeBuild {
 
   def apply() = {
     sonatypeSettings ++ Seq(
-      pomExtra := (<url>https://www.gov.uk/government/organisations/hm-revenue-customs</url>
+      pomExtra := (<url>http://liquid-armour.co.uk</url>
         <licenses>
           <license>
             <name>Apache 2</name>
@@ -78,30 +77,15 @@ object SonatypeBuild {
           </license>
         </licenses>
         <scm>
-          <connection>scm:git@github.com:hmrc/play-flow.git</connection>
-          <developerConnection>scm:git@github.com:hmrc/simple-reactivemongo.git</developerConnection>
-          <url>git@github.com:hmrc/simple-reactivemongo.git</url>
+          <connection>scm:git@github.com:liquidarmour/play-flow.git</connection>
+          <developerConnection>scm:git@github.com:liquidarmour/play-flow.git</developerConnection>
+          <url>git@github.com:liquidarmour/play-flow.git</url>
         </scm>
         <developers>
           <developer>
-            <id>xnejp03</id>
-            <name>Petr Nejedly</name>
-            <url>http://www.equalexperts.com</url>
-          </developer>
-          <developer>
-            <id>DougC</id>
-            <name>Doug Clinton</name>
-            <url>http://www.equalexperts.com</url>
-          </developer>
-          <developer>
-            <id>charleskubicek</id>
-            <name>Charles Kubicek</name>
-            <url>http://www.equalexperts.com</url>
-          </developer>
-          <developer>
-            <id>duncancrawford</id>
-            <name>Duncan Crawford</name>
-            <url>http://www.equalexperts.com</url>
+            <id>liquidarmour</id>
+            <name>James Williams</name>
+            <url>http://liquid-armour.co.uk</url>
           </developer>
         </developers>)
     )

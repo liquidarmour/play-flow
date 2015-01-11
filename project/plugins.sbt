@@ -1,4 +1,4 @@
-logLevel := Level.Debug
+logLevel := Level.Warn
 
 addSbtPlugin("uk.gov.hmrc" % "sbt-utils" % "2.0.2")
 
